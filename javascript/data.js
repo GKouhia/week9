@@ -1,7 +1,11 @@
-	
+$("document").ready(function(){
+  
+      //hook onto the ul...
+    var artist_ul = document.getElementById("artist-ul");
+
 	var artistObj = {};
 	
-	artists = {
+	artistObj = {
 		artist1 : {
 			link : "http://hoist1138.com/jacques-louis-david.html",
 			img : "assets/images/artists/jacques-louis-david.png",
@@ -51,7 +55,7 @@
 		},
 		artist9 : {
 			link : "hoist1138.com/norman-rockwell.html",
-			img : "images/artists/norman-rockwell.png",
+			img : "assets/images/artists/norman-rockwell.png",
 			fullName : "Norman Rockwell",
 			years : "1894 - 1978"
 		},
@@ -93,3 +97,27 @@
 		}
 	};
 
+    
+  
+  function buildListItems(myObject)
+  {
+    //start a variable to build up a list with 
+    var output = "";
+    
+    for(i in myObject)
+      {
+        output += "<li>";
+        output += '<a href="' + artistObj[i].link + '">';
+        output += '<img src="' + artistObj[i].img + '" />';
+        output += '<h3>' + artistObj[i].fullName + '</h3>';
+        output += '<h4>' + artistObj[i].years + '<h4>';
+        output += '</li>';
+      }
+    
+      artist_ul.innerHTML = output;
+    
+  }
+
+  buildListItems(artistObj);
+  
+});//closing document.ready

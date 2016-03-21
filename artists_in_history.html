@@ -23,8 +23,9 @@
 
 <link rel="icon" href="favicon.png" type="image/png" /> 
 
+
 <!-- MOBILE STYLES -->
-<!-- because we have a reponsive website, that means the users wont have to pinch and zoom, <br>
+<!-- because we have a responsive website, that means the users won't have to pinch and zoom, <br>
 so lets disable this feature so our CSS takes care of it -->
 <meta name="viewport" content="width=device-width, maximum-scale-1.0, minimum-scale=1.0, initial-scale=1.0" />
 
@@ -36,15 +37,7 @@ so lets disable this feature so our CSS takes care of it -->
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-  <script type="text/javascript">
-    var mobile = (
-/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.useragent.toLowerCase()));
-    if (mobile)
-    {
-      document.location = "artists_in_history.html";
-    }
-  </script> <!-- this "inspect the user approach" might be used to check the visitor's browser for a cookie, such that a repeat visitor will be sent to a different site than a new visitor to a site.-->
-  <!-- alternatively, use a content management system, like MODX. -->
+<script src="javascript/data.js"></script> 
 
 <title>Artists in History :: Mobile Site</title>
 <!-- <link rel="stylesheet" href="assets/css/mobile-styles.css" /> -->
@@ -81,33 +74,8 @@ so lets disable this feature so our CSS takes care of it -->
 	</div>
 
 	<div data-role="content">
-		<ul data-role="listview">
-			<li>
-				<a href="http://hoist1138.com/edward-hopper.html">
-				<img src="assets/images/artists/edward-hopper.png" />
-				<h3>Edward Hopper  </h3>
-				<h4>1892 - 1967</h4>
-				</a>
-				<a href="#">info</a>
-			</li>
-			
-			<li>
-				<a href="http://hoist1138.com/edvard-munch.html">
-				<img src="assets/images/artists/edvard-munch.png" />
-				<h3>Edvard Munch  </h3>
-				<h4>1863 - 1944</h4>
-				</a>
-				<a href="#">info</a>
-			</li>
-			
-			<li>
-				<a href="http://hoist1138.com/alphonse-mucha.html">
-				<img src="assets/images/artists/alphonse-mucha.png" />
-				<h3>Alphonse Mucha  </h3>
-				<h4>1860 - 1939</h4>
-				</a>
-				<a href="#">info</a>
-			</li>
+		<ul id="artist-ul" data-role="listview" data-filter="true" data-inset="true">
+		  
 		</ul>
     </div><!-- content closing -->
 
